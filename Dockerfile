@@ -18,6 +18,6 @@ WORKDIR /root
 COPY --from=build /root/node_modules ./node_modules
 COPY --from=build /root/dist ./dist
 
-RUN apk add --update --no-cache mysql-client nodejs npm
+RUN apk add --update --no-cache nodejs npm mongodb-tools
 
 ENTRYPOINT ["node", "dist/index.js"]
